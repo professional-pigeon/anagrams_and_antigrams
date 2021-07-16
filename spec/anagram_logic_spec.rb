@@ -36,4 +36,8 @@ describe("#anagram_logic") do
     item_test.define_arrays
     expect(item_test.antigram?).to(eq(true))
   end
+  it("will return a statement for an antigram") do
+    item_test = GramSpace.new("bike", "cow")
+    expect(item_test.method_chain).to(eq("bike and cow are antigrams"))
+  end
 end

@@ -55,15 +55,6 @@ class GramSpace
     antigram_bool
   end
 
-  def method_chain
-    define_arrays
-    if valid_word? == true
-      if antigram? == true
-        return "You've got an antigram on your hands"
-      end
-      if anagram? == true
-        return "You've got an anagram on your hands"
-      end
 
 
 end
