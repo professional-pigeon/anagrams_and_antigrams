@@ -50,3 +50,4 @@ describe("#anagram_logic") do
     expect(item_test.common_letters).to(eq("o, w"))
   end
 end
+

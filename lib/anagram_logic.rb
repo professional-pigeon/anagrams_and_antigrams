@@ -82,3 +82,20 @@ class GramSpace
     end
   end
 end
+
+class Palindrome
+  def palindrome?(array)
+    x = 0
+    palindrome_bool = true
+    while x < array.length/2
+      y = array.length-1
+      if array[x] == array[y]
+        x = x+1
+        y = y-1
+      else
+        palindrome_bool = false
+      end
+    end
+    palindrome_bool
+  end
+end
