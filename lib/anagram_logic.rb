@@ -11,6 +11,16 @@ class GramSpace
     @array_word1 = @word1.split('')
     @array_word2 = @word2.split('')
   end
-
+  
+  def anagram?
+    define_arrays
+    is_anagram = true
+    @array_word1.each do |char|
+      if @array_word2.include?(char) === false
+        is_anagram = false
+      end
+    end
+    return is_anagram
+  end
 
 end
