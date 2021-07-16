@@ -17,8 +17,7 @@ class GramSpace
   def valid_word?
     vowels = ["a", "e", "i", "o", "u", "y"]
     bool_to_print = false
-    array_of_words = @word1.downcase.split(' ')
-    array_of_words2 = @word2.downcase.split(' ')
+    array_of_words = @word1.downcase.split(' ') + @word2.downcase.split(' ')
     array_of_words.each do |word|
       bool_to_print = false
       vowels.each do |vowel|
@@ -66,17 +65,15 @@ class GramSpace
 
   def method_chain
     define_arrays
-    if valid_word? == true
-      if antigram? == true
+    if valid_word?
+      if antigram?
         return "#{@word1} and #{@word2} are antigrams"
       end
-      if anagram? == true
+      if anagram?
         return "#{@word1} and #{@word2} are anagrams"
       end
     else
       return "please try again with two real words you trickster."
     end
   end
-
-
 end
