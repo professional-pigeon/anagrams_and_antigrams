@@ -8,7 +8,9 @@ class GramSpace
   end
 
   def define_arrays
-    @array_word1 = @word1.downcase.split('')
-    @array_word2 = @word2.downcase.split('')
+    @array_word1 = @word1.split('')
+    @array_word2 = @word2.split('')
   end
+
+
 end
