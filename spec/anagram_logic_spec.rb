@@ -24,7 +24,11 @@ describe("#anagram_logic") do
   end
   it("will ask you to put in a word if the 'words' entered are strings of consonants") do
     item_test = GramSpace.new("httw", "wtph")
-    item_test.define_arrays
     expect(item_test.valid_word?).to(eq(false))
+  end
+  it("will remove spacing and punctuation from a word or words") do
+    item_test = GramSpace.new("bi ke?", "hike")
+    item_test.define_arrays
+    expect(item_test.array_word1).to(eq(["b", "i", "k", "e"]))
   end
 end

@@ -8,8 +8,10 @@ class GramSpace
   end
 
   def define_arrays
-    @array_word1 = @word1.downcase.split('')
-    @array_word2 = @word2.downcase.split('')
+    array_word1 = @word1.downcase.split('')
+    array_word2 = @word2.downcase.split('')
+    @array_word1 = array_word1.reject {|letter| letter == " " || letter == "." || letter == "," || letter == "?" || letter == "!"}
+    @array_word2 = array_word2.reject {|letter| letter == " " || letter == "." || letter == "," || letter == "?" || letter == "!"}
   end
 
   def valid_word?
