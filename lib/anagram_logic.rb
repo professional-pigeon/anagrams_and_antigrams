@@ -20,6 +20,11 @@ class GramSpace
         is_anagram = false
       end
     end
+    @array_word2.each do |char|
+      if @array_word1.include?(char) === false
+        is_anagram = false
+      end
+    end
     is_anagram
   end
 
