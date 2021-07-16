@@ -9,6 +9,7 @@
 - [Description](#description)
 - [Setup/Installation Requirements](#setup/installation-requirements)
 - [Known Bugs](#known-bugs)
+- [Valid Word Tests](#valid-word-tests)
 - [Future Plans](#future-plans)
 - [License](#license)
 - [Contact Information](#contact-information)
@@ -35,6 +36,15 @@ This is a program dedicated to telling you if two strings are anagrams, antigram
 ## Known Bugs
 
 * None currently known
+
+## Valid Word Tests
+
+There is a section that tests whether a word is legal without referencing a dictionary.
+
+There are three rules currently
+* a word must contain a vowel
+* a word must not have the same consonant three times in a row
+* a word with a length of 1 character is only valid if it is I or A. 
 
 ## License
 
