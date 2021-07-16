@@ -17,4 +17,9 @@ describe("#anagram_logic") do
     item_test.define_arrays
     expect(item_test.anagram?).to(eq(true))
   end
+  it("compare the two arrays and return true if true anagram if casing is different") do
+    item_test = GramSpace.new("listEN", "siLent")
+    item_test.define_arrays
+    expect(item_test.anagram?).to(eq(true))
+  end
 end
