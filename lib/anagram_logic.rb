@@ -3,6 +3,7 @@ require ('pry')
 class GramSpace
   VOWELS = ["a", "e", "i", "o", "u", "y"]
   attr_reader(:array_word1, :array_word2, :common_letters)
+
   def initialize(word1, word2)
     @word1 = word1
     @word2 = word2
@@ -88,7 +89,7 @@ class GramSpace
 
   def method_chain
     define_arrays
-    if valid_word_vowel?
+    if valid_word_vowel? && valid_word_consonants?
       if antigram?
         return "#{@word1} and #{@word2} are antigrams"
       elsif anagram?
@@ -103,7 +104,7 @@ class GramSpace
 end
 
 # class Palindrome 
-#   def palindrome?
+#   def palindrome?(word)
 #     x = 0
 #     palindrome_bool = true
 #     while x < array.length/2

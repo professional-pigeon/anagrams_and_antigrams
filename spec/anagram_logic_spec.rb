@@ -49,9 +49,13 @@ describe("#anagram_logic") do
     item_test.method_chain
     expect(item_test.common_letters).to(eq("o, w"))
   end
-  it("will tell you the 'words' entered are false if they contain three consonants in a row") do
+  it("will tell you the 'words' entered are false if they contain three of the same consonant in a row") do
     item_test = GramSpace.new("pppa", "wake")
     expect(item_test.valid_word_consonants?).to(eq(false))
+  end
+  it("will tell you the 'words' entered are false if they are 1 letter long and aren't 'i' or 'a'.") do
+    item_test = GramSpace.new("b", "wake")
+    expect(item_test.valid_word_length?).to(eq(false))
   end
 
 end
