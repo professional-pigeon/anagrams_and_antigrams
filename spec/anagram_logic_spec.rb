@@ -22,10 +22,10 @@ describe("#anagram_logic") do
     item_test.define_arrays
     expect(item_test.anagram?).to(eq(true))
   end
-  # it("will ask you to put in a word if the 'words' entered are strings of consonants") do
-  #   item_test = GramSpace.new("httw", "wtph")
-  #   expect(item_test.valid_word?).to(eq(false))
-  # end
+  it("will ask you to put in a word if the 'words' entered are strings of consonants") do
+    item_test = GramSpace.new("httw", "wtph")
+    expect(item_test.valid_word?).to(eq(false))
+  end
   it("will remove spacing and punctuation from a word or words") do
     item_test = GramSpace.new("bi ke?", "hike")
     item_test.define_arrays
@@ -39,5 +39,9 @@ describe("#anagram_logic") do
   it("will return a statement for an antigram") do
     item_test = GramSpace.new("bike", "cow")
     expect(item_test.method_chain).to(eq("bike and cow are antigrams"))
+  end
+  it("will tell you false if a word in a sentence is not an valid word") do
+    item_test = GramSpace.new("bikes are fun to pppppl.", "cow")
+    expect(item_test.valid_word).to(eq(false))
   end
 end
