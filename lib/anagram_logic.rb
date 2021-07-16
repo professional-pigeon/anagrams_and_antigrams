@@ -2,7 +2,7 @@ require ('pry')
 
 class GramSpace
   VOWELS = ["a", "e", "i", "o", "u", "y"]
-  attr_reader(:array_word1, :array_word2)
+  attr_reader(:array_word1, :array_word2, :common_letters)
   def initialize(word1, word2)
     @word1 = word1
     @word2 = word2
@@ -35,6 +35,7 @@ class GramSpace
   
   def anagram?
     anagram_bool = true
+    common_letters = []
     @array_word1.each do |char|
       if @array_word2.include?(char) == false
         anagram_bool = false
@@ -45,6 +46,7 @@ class GramSpace
         anagram_bool = false
       end
     end
+    @common_letters = common_letters.join(" and ")
     anagram_bool
   end
 

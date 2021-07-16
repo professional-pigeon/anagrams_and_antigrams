@@ -44,4 +44,8 @@ describe("#anagram_logic") do
     item_test = GramSpace.new("bikes are fun to ppppl.", "cow")
     expect(item_test.valid_word?).to(eq(false))
   end
+  it("will tell you which letters were in common if it was not an anagram") do
+    item_test = GramSpace.new("bow", "cow")
+    expect(item_test.valid_word?).to(eq(["b", "o"]))
+  end
 end
