@@ -19,7 +19,7 @@ class GramSpace
     bool_to_print = false
     vowels.each do |vowel|
       if @word1.include?(vowel) == true || @word2.include?(vowel) == true |
-        bool = true
+        bool_to_print = true
       end
     end
     bool_to_print
@@ -55,6 +55,19 @@ class GramSpace
     antigram_bool
   end
 
+  def method_chain
+    define_arrays
+    if valid_word? == true
+      if antigram? == true
+        return "#{@word1} and #{@word2} are antigrams"
+      end
+      if anagram? == true
+        return "#{@word1} and #{@word2} are anagrams"
+      end
+    else
+      return "please try again with two real words you trickster."
+    end
+  end
 
 
 end
