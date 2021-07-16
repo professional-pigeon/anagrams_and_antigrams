@@ -34,6 +34,6 @@ describe("#anagram_logic") do
   it("will tell you if you've got an antigram on your hands") do
     item_test = GramSpace.new("bike", "cow")
     item_test.define_arrays
-    expect(item_test.antigram?).to(eq([true]))
+    expect(item_test.antigram?).to(eq(true))
   end
 end

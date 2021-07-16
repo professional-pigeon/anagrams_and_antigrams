@@ -26,7 +26,6 @@ class GramSpace
   end
   
   def anagram?
-    define_arrays
     anagram_bool = true
     @array_word1.each do |char|
       if @array_word2.include?(char) == false
@@ -40,5 +39,31 @@ class GramSpace
     end
     anagram_bool
   end
+
+  def antigram?
+    antigram_bool = true
+    @array_word1.each do |char|
+      if @array_word2.include?(char) == true
+        antigram_bool = false
+      end
+    end
+    @array_word2.each do |char|
+      if @array_word1.include?(char) == true
+        antigram_bool = false
+      end
+    end
+    antigram_bool
+  end
+
+  def method_chain
+    define_arrays
+    if valid_word? == true
+      if antigram? == true
+        return "You've got an antigram on your hands"
+      end
+      if anagram? == true
+        return "You've got an anagram on your hands"
+      end
+
 
 end
