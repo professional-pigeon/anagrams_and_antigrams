@@ -35,7 +35,7 @@ class GramSpace
   
   def anagram?
     anagram_bool = true
-    common_letters = []
+    common_letters_a = []
     @array_word1.each do |char|
       if @array_word2.include?(char) == false
         anagram_bool = false
@@ -44,9 +44,11 @@ class GramSpace
     @array_word2.each do |char|
       if @array_word1.include?(char) == false
         anagram_bool = false
+      else 
+        common_letters_a.push(char)
       end
     end
-    @common_letters = common_letters.join(" and ")
+    @common_letters = common_letters_a.join(", ")
     anagram_bool
   end
 
@@ -73,7 +75,7 @@ class GramSpace
       elsif anagram?
         return "#{@word1} and #{@word2} are anagrams"
       else
-        return "Looks like your words aren't antigrams or an anagrams"
+        return "Looks like your words aren't antigrams or an anagrams. Here are the letters that matched: #{@common_letters}"
       end
     else
       return "please try again with two real words you trickster."
