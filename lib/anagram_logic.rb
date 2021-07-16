@@ -20,7 +20,7 @@ class GramSpace
         is_anagram = false
       end
     end
-    return is_anagram
+    is_anagram
   end
 
 end

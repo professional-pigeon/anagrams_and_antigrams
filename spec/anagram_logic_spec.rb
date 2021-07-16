@@ -12,4 +12,9 @@ describe("#anagram_logic") do
     item_test.define_arrays
     expect(item_test.anagram?).to(eq(true))
   end
+  it("compare the two arrays and return true if true anagram") do
+    item_test = GramSpace.new("listen", "silent")
+    item_test.define_arrays
+    expect(item_test.anagram?).to(eq(true))
+  end
 end
