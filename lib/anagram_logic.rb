@@ -1,21 +1,7 @@
 require ('pry')
 
-class GramSpace
+module WordValidity 
   VOWELS = ["a", "e", "i", "o", "u", "y"]
-  attr_reader(:array_word1, :array_word2, :common_letters)
-
-  def initialize(word1, word2)
-    @word1 = word1
-    @word2 = word2
-  end
-
-  def define_arrays
-    array_word1 = @word1.downcase.split('')
-    array_word2 = @word2.downcase.split('')
-    @array_word1 = array_word1.reject {|letter| letter == " " || letter == "." || letter == "," || letter == "?" || letter == "!"}
-    @array_word2 = array_word2.reject {|letter| letter == " " || letter == "." || letter == "," || letter == "?" || letter == "!"}
-  end
-
   def valid_word_vowel?
     bool_to_print = false
     array_of_words = @word1.downcase.split(' ') + @word2.downcase.split(' ')
@@ -31,7 +17,7 @@ class GramSpace
         break
       end
     end
-    bool_to_print
+  bool_to_print
   end
 
   def valid_word_consonants?
@@ -63,7 +49,23 @@ class GramSpace
     end
     bool_to_print
   end
+end
 
+class GramSpace
+  include WordValidity
+  attr_reader(:array_word1, :array_word2, :common_letters)
+
+  def initialize(word1, word2)
+    @word1 = word1
+    @word2 = word2
+  end
+
+  def define_arrays
+    array_word1 = @word1.downcase.split('')
+    array_word2 = @word2.downcase.split('')
+    @array_word1 = array_word1.reject {|letter| letter == " " || letter == "." || letter == "," || letter == "?" || letter == "!"}
+    @array_word2 = array_word2.reject {|letter| letter == " " || letter == "." || letter == "," || letter == "?" || letter == "!"}
+  end
   
   def anagram?
     anagram_bool = true
@@ -101,7 +103,7 @@ class GramSpace
 
   def method_chain
     define_arrays
-    if valid_word_vowel? && valid_word_consonants?
+    if valid_word_vowel? && valid_word_consonants? && valid_word_by_length?
       if antigram?
         return "#{@word1} and #{@word2} are antigrams"
       elsif anagram?
@@ -110,24 +112,8 @@ class GramSpace
         return "Looks like your words aren't antigrams or an anagrams. Here are the letters that matched: #{@common_letters}"
       end
     else
-      return "please try again with two real words you trickster."
+      return "please try again with two real words or sentences containing real words."
     end
   end
 end
 
-# class Palindrome 
-#   def palindrome?(word)
-#     x = 0
-#     palindrome_bool = true
-#     while x < array.length/2
-#       y = array.length-1
-#       if array[x] == array[y]
-#         x = x+1
-#         y = y-1
-#       else
-#         palindrome_bool = false
-#       end
-#     end
-#     palindrome_bool
-#   end
-# end

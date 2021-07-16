@@ -28,11 +28,11 @@ This is a program dedicated to telling you if two strings are anagrams, antigram
 
 ## Setup/Installation Requirements
 
-* Clone this repository from github to your desktop: [Github link for this project]()
+* Clone this repository from github to your desktop: [Github link for this project](https://github.com/professional-pigeon/anagrams_and_antigrams.git)
 * navigate to the top level of the directory
 * run terminal command "chmod +x ./anagram_scripts.rb" in order to be able to run the script.
 * Enter "./anagram_scripts.rb" into the terminal to start the program and follow the prompts to participate.
-
+* run "gem install 'rspec'" and "gem install 'pry'" to create the Gemfile.lock and run rspec.
 ## Known Bugs
 
 * None currently known

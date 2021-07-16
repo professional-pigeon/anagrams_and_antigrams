@@ -57,5 +57,4 @@ describe("#anagram_logic") do
     item_test = GramSpace.new("b", "wake")
     expect(item_test.valid_word_by_length?).to(eq(false))
   end
-
 end
