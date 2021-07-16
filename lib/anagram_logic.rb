@@ -15,7 +15,7 @@ class GramSpace
     @array_word2 = array_word2.reject {|letter| letter == " " || letter == "." || letter == "," || letter == "?" || letter == "!"}
   end
 
-  def valid_word?
+  def valid_word_vowel?
     bool_to_print = false
     array_of_words = @word1.downcase.split(' ') + @word2.downcase.split(' ')
     array_of_words.each do |word|
@@ -31,6 +31,24 @@ class GramSpace
       end
     end
     bool_to_print
+  end
+
+  def valid_word_consonants?
+    bool_to_print = true
+    array_of_words = @word1.downcase.split(' ') + @word2.downcase.split(' ')
+    array_of_words.each do |word|
+      letter_array = word.split('')
+      loop_number = letter_array.length-1
+      x = 0
+      loop_number.times do
+        if word_array[x] === word_array[x+1]
+          x = x+1
+        end
+        if x == 3
+          bool_to_print = false
+        end
+      end
+    end
   end
   
   def anagram?
@@ -69,7 +87,7 @@ class GramSpace
 
   def method_chain
     define_arrays
-    if valid_word?
+    if valid_word_vowel?
       if antigram?
         return "#{@word1} and #{@word2} are antigrams"
       elsif anagram?
@@ -83,19 +101,19 @@ class GramSpace
   end
 end
 
-class Palindrome
-  def palindrome?(array)
-    x = 0
-    palindrome_bool = true
-    while x < array.length/2
-      y = array.length-1
-      if array[x] == array[y]
-        x = x+1
-        y = y-1
-      else
-        palindrome_bool = false
-      end
-    end
-    palindrome_bool
-  end
-end
+# class Palindrome 
+#   def palindrome?
+#     x = 0
+#     palindrome_bool = true
+#     while x < array.length/2
+#       y = array.length-1
+#       if array[x] == array[y]
+#         x = x+1
+#         y = y-1
+#       else
+#         palindrome_bool = false
+#       end
+#     end
+#     palindrome_bool
+#   end
+# end

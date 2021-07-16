@@ -24,7 +24,7 @@ describe("#anagram_logic") do
   end
   it("will ask you to put in a word if the 'words' entered are strings of consonants") do
     item_test = GramSpace.new("httw", "wtph")
-    expect(item_test.valid_word?).to(eq(false))
+    expect(item_test.valid_word_vowel?).to(eq(false))
   end
   it("will remove spacing and punctuation from a word or words") do
     item_test = GramSpace.new("bi ke?", "hike")
@@ -42,12 +42,16 @@ describe("#anagram_logic") do
   end
   it("will tell you false if a word in a sentence is not an valid word") do
     item_test = GramSpace.new("bikes are fun to ppppl.", "cow")
-    expect(item_test.valid_word?).to(eq(false))
+    expect(item_test.valid_word_vowel?).to(eq(false))
   end
   it("will tell you which letters were in common if it was not an anagram") do
     item_test = GramSpace.new("bow", "cow")
     item_test.method_chain
     expect(item_test.common_letters).to(eq("o, w"))
   end
-end
+  it("will tell you the 'words' entered are false if they contain three consonants in a row") do
+    item_test = GramSpace.new("pppa", "wake")
+    expect(item_test.valid_word_vowel?).to(eq(false))
+  end
 
+end
