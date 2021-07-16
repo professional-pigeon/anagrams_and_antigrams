@@ -52,6 +52,18 @@ class GramSpace
     end
     bool_to_print
   end
+
+  def valid_word_by_length?
+    bool_to_print = true
+    array_of_words = @word1.downcase.split(' ') + @word2.downcase.split(' ')
+    array_of_words.each do |word|
+      if (word.length < 2) && (word.include?("a") == false)
+        bool_to_print = false
+      end
+    end
+    bool_to_print
+  end
+
   
   def anagram?
     anagram_bool = true

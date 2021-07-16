@@ -55,7 +55,7 @@ describe("#anagram_logic") do
   end
   it("will tell you the 'words' entered are false if they are 1 letter long and aren't 'i' or 'a'.") do
     item_test = GramSpace.new("b", "wake")
-    expect(item_test.valid_word_length?).to(eq(false))
+    expect(item_test.valid_word_by_length?).to(eq(false))
   end
 
 end
