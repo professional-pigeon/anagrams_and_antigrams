@@ -47,6 +47,6 @@ describe("#anagram_logic") do
   it("will tell you which letters were in common if it was not an anagram") do
     item_test = GramSpace.new("bow", "cow")
     item_test.method_chain
-    expect(item_test.common_letters).to(eq("o w"))
+    expect(item_test.common_letters).to(eq("o, w"))
   end
 end
