@@ -40,15 +40,16 @@ class GramSpace
       letter_array = word.split('')
       loop_number = letter_array.length-1
       x = 0
-      loop_number.times do
-        if word_array[x] === word_array[x+1]
+      loop_number.times() do
+        if letter_array[x] === letter_array[x+1]
           x = x+1
         end
-        if x == 3
+        if x == 2
           bool_to_print = false
         end
       end
     end
+    bool_to_print
   end
   
   def anagram?

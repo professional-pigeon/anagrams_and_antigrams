@@ -51,7 +51,7 @@ describe("#anagram_logic") do
   end
   it("will tell you the 'words' entered are false if they contain three consonants in a row") do
     item_test = GramSpace.new("pppa", "wake")
-    expect(item_test.valid_word_vowel?).to(eq(false))
+    expect(item_test.valid_word_consonants?).to(eq(false))
   end
 
 end
