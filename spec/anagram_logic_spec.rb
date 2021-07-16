@@ -42,6 +42,6 @@ describe("#anagram_logic") do
   end
   it("will tell you false if a word in a sentence is not an valid word") do
     item_test = GramSpace.new("bikes are fun to pppppl.", "cow")
-    expect(item_test.valid_word).to(eq(false))
+    expect(item_test.valid_word?).to(eq(false))
   end
 end

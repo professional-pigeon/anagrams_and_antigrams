@@ -17,9 +17,18 @@ class GramSpace
   def valid_word?
     vowels = ["a", "e", "i", "o", "u", "y"]
     bool_to_print = false
-    vowels.each do |vowel|
-      if @word1.include?(vowel) == true || @word2.include?(vowel) == true |
-        bool_to_print = true
+    array_of_words = @word1.downcase.split(' ')
+    array_of_words2 = @word2.downcase.split(' ')
+    array_of_words.each do |word|
+      bool_to_print = false
+      vowels.each do |vowel|
+        if word.include?(vowel) == true
+          bool_to_print = true
+          break
+        end
+      end
+      if bool_to_print == false
+        break
       end
     end
     bool_to_print
